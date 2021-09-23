@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "PERSON")
 public class Person {
 
 	@Id
@@ -20,6 +22,12 @@ public class Person {
 	@Column(name = "SURNAME")
 	private String surname;
 	
+	public Person() {}
+	
+	public Person(String name, String surname) {
+		this.name = name;
+		this.surname = surname;
+	}
 	public String getName() {
 		return name;
 	}
