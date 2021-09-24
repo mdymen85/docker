@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  docker-test-mysql:
+    container_name: docker-test-mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=mdymen_pass
+     # - MYSQL_DATABASE=docker_test_database
+    volumes:
+      - "./mysql/data.sql:/docker-entrypoint-initdb.d/data.sql"
+    
