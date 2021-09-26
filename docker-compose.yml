@@ -12,4 +12,15 @@ services:
      # - MYSQL_DATABASE=docker_test_database
     volumes:
       - "./mysql/data.sql:/docker-entrypoint-initdb.d/data.sql"
+    #networks:
+     # - first-app
+  docker-app-test:
+    container_name: docker-app-test
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 8081:8080
+    depends_on:
+      - docker-test-mysql
     

@@ -1,14 +1,14 @@
 # docker
 Project for test docker images
 
-sudo docker network create first-app
+it creates a "docker_default" network
 
-sudo docker build -t dockerapptest .
+connection string: spring.datasource.url=jdbc:mysql://${MYSQL_HOST:docker-test-mysql}:3306/docker_test_database?allowPublicKeyRetrieval=true&autoReconnect=true
 
-sudo docker run --net first-app --name dockerapptest -d -p 8080:8080 dockerapptest
+autoReconnect is because its no order to run the containers, the java applications needs to try to connect again to catch after the mysql container is running.
 
-sudo docker run --net first-app --name dockermysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mdymen_pass -d mysql:latest
+sudo docker-compose up
 
-sudo docker exec -i dockermysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < data.sql
+
 
 
