@@ -7,7 +7,7 @@ connection string: spring.datasource.url=jdbc:mysql://${MYSQL_HOST:docker-test-m
 
 autoReconnect is because its no order to run the containers, the java applications needs to try to connect again to catch after the mysql container is running.
 
-sudo docker-compose up
+sudo docker-compose up -d
 
 
 
