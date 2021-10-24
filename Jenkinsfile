@@ -1,6 +1,10 @@
 pipeline {
     agent any
     
+    environment {
+       JAVA = '/usr/lib/jvm/java-11-openjdk-amd64/'
+    }
+    
     stages {
         stage('clone') {
             steps {
@@ -10,8 +14,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
-                sh "PATH=$JAVA_HOME/bin:$PATH"
+//                sh "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
+                sh "PATH=${JAVA}/bin:$PATH"
                 sh "mvn clean install -DskipTests"
             }
         }
