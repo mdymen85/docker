@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                git branch: 'v3-23-10-2021', credentialsId: 'GitHub', url: 'https://github.com/mdymen85/docker.git'
+                git branch: 'v4-26-09-2021-Jenkinsfile', credentialsId: 'GitHub', url: 'https://github.com/mdymen85/docker.git'
             }
         
         }
