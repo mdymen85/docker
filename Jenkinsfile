@@ -11,9 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 sh "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/"
-                sh "Set 1"
                 sh "PATH=$JAVA_HOME/bin:$PATH"
-                sh "Set 2"
                 sh "mvn clean install -DskipTests"
             }
         }
