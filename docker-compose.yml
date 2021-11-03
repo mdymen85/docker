@@ -15,7 +15,8 @@ services:
     #networks:
      # - first-app
   docker-app-test:
-    container_name: docker-app-test
+    container_name: mdymen85/docker-app-test
+    image: docker-app-test
     build:
       dockerfile: Dockerfile
       context: .
